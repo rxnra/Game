@@ -1,0 +1,167 @@
+[
+  {
+    "category": "General Knowledge",
+    "text": "بزرگ‌ترین اقیانوس جهان کدام است؟",
+    "options": [
+      "اقیانوس اطلس",
+      "اقیانوس هند",
+      "اقیانوس منجمد شمالی",
+      "اقیانوس آرام"
+    ],
+    "correct": "D"
+  },
+  {
+    "category": "General Knowledge",
+    "text": "کدام اندام خون را در بدن پمپاژ می‌کند؟",
+    "options": [
+      "ریه",
+      "مغز",
+      "قلب",
+      "معده"
+    ],
+    "correct": "C"
+  },
+  {
+    "category": "General Knowledge",
+    "text": "سخت‌ترین ماده معدنی طبیعی کدام است؟",
+    "options": [
+      "طلا",
+      "کوارتز",
+      "الماس",
+      "آهن"
+    ],
+    "correct": "C"
+  },
+  {
+    "category": "General Knowledge",
+    "text": "کدام هنرمند تابلوی معروف مونالیزا را نقاشی کرده است؟",
+    "options": [
+      "پابلو پیکاسو",
+      "لئوناردو داوینچی",
+      "ونسان ون‌گوگ",
+      "کلود مونه"
+    ],
+    "correct": "B"
+  },
+  {
+    "category": "General Knowledge",
+    "text": "برج ایفل در کدام کشور قرار دارد؟",
+    "options": [
+      "ایتالیا",
+      "اسپانیا",
+      "فرانسه",
+      "آلمان"
+    ],
+    "correct": "C"
+  },
+  {
+    "category": "Math",
+    "text": "حاصل ضرب ۱۵ در ۲ چند است؟",
+    "options": [
+      "۴۵",
+      "۳۵",
+      "۳۰",
+      "۴۰"
+    ],
+    "correct": "C"
+  },
+  {
+    "category": "Math",
+    "text": "جذر اصلی عدد ۲۵ چند است؟",
+    "options": [
+      "۱۰",
+      "۵",
+      "-۵",
+      "۲"
+    ],
+    "correct": "B"
+  },
+  {
+    "category": "Math",
+    "text": "کدام عدد اول است؟",
+    "options": [
+      "۱۱",
+      "۲۱",
+      "۱۵",
+      "۲۵"
+    ],
+    "correct": "A"
+  },
+  {
+    "category": "Math",
+    "text": "حاصل ۳۶ تقسیم بر ۴ کدام است؟",
+    "options": [
+      "۸",
+      "۹",
+      "۷",
+      "۶"
+    ],
+    "correct": "B"
+  },
+  {
+    "category": "Math",
+    "text": "حاصل ۴۵ منهای ۲۰ کدام است؟",
+    "options": [
+      "۱۵",
+      "۲۰",
+      "۲۵",
+      "۳۰"
+    ],
+    "correct": "C"
+  },
+  {
+    "category": "English",
+    "text": "What does 'improve' mean?",
+    "options": [
+      "Forget",
+      "Get better",
+      "Explain",
+      "Destroy"
+    ],
+    "correct": "B"
+  },
+  {
+    "category": "English",
+    "text": "She was tired, so she decided to ___ at home.",
+    "options": [
+      "stay",
+      "discover",
+      "improve",
+      "borrow"
+    ],
+    "correct": "A"
+  },
+  {
+    "category": "English",
+    "text": "Choose the opposite of 'expensive'.",
+    "options": [
+      "Cheap",
+      "Rich",
+      "Difficult",
+      "Beautiful"
+    ],
+    "correct": "A"
+  },
+  {
+    "category": "English",
+    "text": "How many days are there in a week?",
+    "options": [
+      "Five",
+      "Six",
+      "Seven",
+      "Eight"
+    ],
+    "correct": "C"
+  },
+  {
+    "category": "English",
+    "text": "Which one is a fruit?",
+    "options": [
+      "Carrot",
+      "Potato",
+      "Apple",
+      "Bread"
+    ],
+    "correct": "C"
+  }
+]
