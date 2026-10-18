@@ -1,6 +1,9 @@
 import time
+import arabic_reshaper
 
 from rich.console import Console
+
+from bidi.algorithm import get_display
 
 from engine import Match, ROUNDS
 from storage import QuestionBank, ScoreBoard
@@ -9,18 +12,21 @@ from app_log import AppLog
 AppLog.setup()
 console = Console()
 
+def rtl(text):
+    reshaped_text = arabic_reshaper.reshape(str(text))
+    return get_display(reshaped_text)
 
 def show_menu():
     console.print("\nQuiz Battle", style="bold cyan")
-    console.print("۱) بازی جدید", style="bold green")
-    console.print("۲) خروج", style="bold red")
+    console.print(rtl("۱) بازی جدید"), style="bold green")
+    console.print(rtl("۲) خروج"), style="bold red")
 
 
 def show_leaderboard(board):
     console.print("\nرده‌بندی کل", style="bold cyan")
 
     if board.is_empty():
-        console.print("  هنوز هیچ مسابقه‌ای ثبت نشده.")
+        console.print(rtl("  هنوز هیچ مسابقه‌ای ثبت نشده."))
         return
 
     for rank, (name, stat) in enumerate(board.top(5), start=1):
@@ -34,10 +40,10 @@ def choose_category(bank):
     categories = bank.categories()
 
     if not categories:
-        console.print("هیچ دسته‌بندی‌ای وجود ندارد.", style="red")
+        console.print(rtl("هیچ دسته‌بندی‌ای وجود ندارد."), style="red")
         return None
 
-    console.print("\nانتخاب موضوع", style="bold cyan")
+    console.print(rtl("\nانتخاب موضوع"), style="bold cyan")
 
     for number, category in enumerate(categories, start=1):
         count = bank.count(category)
@@ -47,7 +53,7 @@ def choose_category(bank):
         )
 
     while True:
-        choice = input("شماره یا نام موضوع را وارد کن: ").strip()
+        choice = input(rtl("شماره یا نام موضوع را وارد کن: ")).strip()
 
         selected_category = None
 
@@ -64,7 +70,7 @@ def choose_category(bank):
 
         if selected_category is None:
             console.print(
-                "لطفاً یک شماره یا نام موضوع معتبر وارد کن.",
+                rtl("لطفاً یک شماره یا نام موضوع معتبر وارد کن."),
                 style="yellow",
             )
             continue
@@ -81,10 +87,11 @@ def choose_category(bank):
 
 def prompt_choice(player_name, question):
     console.print(f"\n{player_name}", style="bold cyan")
-    console.print(question.text, style="bold")
+    console.print(rtl(question.text), style="bold")
 
     for letter, option in zip("ABCD", question.options):
-        console.print(f"  {letter}) {option}", style="bold")
+        console.print(f"{letter})" , end="")
+        console.print(rtl(option), style="bold")
 
     while True:
         start = time.perf_counter()
@@ -95,15 +102,15 @@ def prompt_choice(player_name, question):
             return choice, elapsed
 
         console.print(
-            "لطفاً فقط یکی از گزینه‌های A تا D را وارد کن.",
+            rtl("لطفاً فقط یکی از گزینه‌های A تا D را وارد کن."),
             style="yellow",
         )
 
 
 def play_match(
     questions,
-    player1_name="بازیکن 1",
-    player2_name="بازیکن 2",
+    player1_name=rtl("بازیکن 1"),
+    player2_name=rtl("بازیکن 2"),
 ):
     match = Match(player1_name, player2_name, questions)
 
@@ -162,8 +169,8 @@ def main():
 
             questions = bank.pick(ROUNDS, category=category)
 
-            player1 = input("نام بازیکن اول: ").strip() or "بازیکن 1"
-            player2 = input("نام بازیکن دوم: ").strip() or "بازیکن 2"
+            player1 = input(rtl("نام بازیکن اول: ")).strip() or "بازیکن 1"
+            player2 = input(rtl("نام بازیکن دوم: ")).strip() or "بازیکن 2"
 
             play_match(questions, player1, player2)
 
@@ -173,10 +180,11 @@ def main():
 
         else:
             console.print(
-                "لطفاً گزینه ۱ یا ۲ را انتخاب کن.",
+                rtl("لطفاً گزینه ۱ یا ۲ را انتخاب کن."),
                 style="yellow",
             )
 
 
 if __name__ == "__main__":
     main()           
+
