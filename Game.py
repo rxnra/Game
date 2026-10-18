@@ -146,3 +146,37 @@ def play_match(
                 f"  {player}: {match.score_of(player)}",
                 style="green",
             )
+def main():
+    bank = QuestionBank()
+    board = ScoreBoard()
+
+    while True:
+        show_menu()
+        choice = input("\nشماره گزینه را وارد کن: ").strip()
+
+        if choice == "1":
+            category = choose_category(bank)
+
+            if category is None:
+                continue
+
+            questions = bank.pick(ROUNDS, category=category)
+
+            player1 = input("نام بازیکن اول: ").strip() or "بازیکن 1"
+            player2 = input("نام بازیکن دوم: ").strip() or "بازیکن 2"
+
+            play_match(questions, player1, player2)
+
+        elif choice == "2":
+            show_leaderboard(board)
+            break
+
+        else:
+            console.print(
+                "لطفاً گزینه ۱ یا ۲ را انتخاب کن.",
+                style="yellow",
+            )
+
+
+if __name__ == "__main__":
+    main()           

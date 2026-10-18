@@ -9,7 +9,7 @@ LEADERBOARD_PATH = "leaderboard.json"
 
 
 class QuestionBank:
-    def init(self, path: str = QUESTIONS_PATH) -> None:
+    def __init__(self, path: str = QUESTIONS_PATH) -> None:
         with open(path, "r", encoding="utf-8") as file:
             data = json.load(file)
 
@@ -74,7 +74,7 @@ class QuestionBank:
 
 
 class ScoreBoard:
-    def init(self, path: str = LEADERBOARD_PATH) -> None:
+    def __init__(self, path: str = LEADERBOARD_PATH) -> None:
         self._path = Path(path)
         self._data: dict[str, dict[str, int]] = {}
 

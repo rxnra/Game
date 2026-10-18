@@ -5,7 +5,7 @@ SPEED_BONUS = 3     # Bonus for the fastest correct answer
 
 
 class Question:
-    def init(
+    def __init__(
         self,
         text,
         options,
@@ -36,13 +36,13 @@ class Question:
 
 
 class RoundResult:
-    def init(self, status, points):
+    def __init__(self, status, points):
         self.status = status
         self.points = points
 
 
 class Match:
-    def init(self, player1, player2, questions):
+    def __init__(self, player1, player2, questions):
         if player1 == player2:
             raise ValueError("Unique Name per Player!")
 
