@@ -11,7 +11,7 @@ class Question:
         options,
         correct,
         power_up=None,
-        category="General Knowledge",
+        category="",
     ):
         if len(options) != 4:
             raise ValueError("Every question must have exactly 4 options.")
