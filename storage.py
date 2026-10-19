@@ -115,3 +115,4 @@ class ScoreBoard:
                 ensure_ascii=False,
                 indent=2,
             )
+print("hi")
